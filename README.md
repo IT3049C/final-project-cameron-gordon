@@ -1,6 +1,6 @@
 # GameHub
 
-**Author Name:** Cameron Gordon 
+**Author Name:** Cameron Gordon (solo)
 
 ## Checklist
 
