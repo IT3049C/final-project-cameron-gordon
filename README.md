@@ -1,3 +1,7 @@
+** NOTE TO THE REVIEWER:*** 
+I have the flew and don't have everything pieced together yet because I'm extremely sick. 
+With that said, you can view it here: https://it3049c.github.io/final-project-cameron-gordon/
+
 # React Router Assignment: Multi-Game Lobby
 
 ## 🎯 What You'll Build
