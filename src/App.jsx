@@ -67,15 +67,15 @@ export function App() {
             </ProtectedRoute>
           ),
         }, 
-                {
+        {
           path: "/game/tic-tac-toe",
           element: (
             <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
-              <ArxivApp /> 
+              <Game /> 
             </ProtectedRoute>
           ),
         },  
-                        {
+        {
           path: "/game/arxiv_snarxiv",
           element: (
             <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
