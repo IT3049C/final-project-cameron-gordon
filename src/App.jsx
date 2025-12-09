@@ -8,6 +8,7 @@ import { loadSettings, saveSettings } from "./logic/settings";
 import Game from "./components/pages/TicTacToe";
 import { HomePage } from "./components/pages/HomePage";
 import ArxivApp from "./components/pages/ArxivVsSnarxiv/ArxivApp";
+import WordleGame from "./wordle";
 
 export function App() {
   const [name, setName] = useState("");
@@ -75,6 +76,14 @@ export function App() {
             </ProtectedRoute>
           ),
         },  
+        {
+          path: "/game/wordle",
+          element: (
+            <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
+              <WordleGame /> 
+            </ProtectedRoute>
+          ),
+        },
         {
           path: "/game/arxiv_snarxiv",
           element: (

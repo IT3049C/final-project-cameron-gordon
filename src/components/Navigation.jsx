@@ -11,6 +11,8 @@ export function Navigation() {
       {` | `}
       <NavLink to="/game/tic-tac-toe">Tic Tac Toe</NavLink>
       {` | `}
+      <NavLink to="/game/wordle">Wordle</NavLink>
+      {` | `}
       <NavLink to="/game/arxiv_snarxiv">Arxiv vs. Snarxiv</NavLink>
     </nav>
   );
