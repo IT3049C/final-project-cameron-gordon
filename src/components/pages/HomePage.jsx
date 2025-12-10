@@ -10,6 +10,8 @@ export function HomePage() {
   const games = [
     { key: "rps", name: "Rock Paper Scissors", description: "A simple game of Rock Paper Scissors" },
     { key: "tic-tac-toe", name: "Tic Tac Toe", description: "A simple game of Tic Tac Toe" },
+    { key: "wordle", name: "Wordle", description: "A Wordle game built in React" },
+    { key: "arxiv_snarxiv", name: "Arxiv vs. Snarxiv", description: "Guess the real paper" },
   ];
 
   // Filter games based on search param (case-insensitive)
