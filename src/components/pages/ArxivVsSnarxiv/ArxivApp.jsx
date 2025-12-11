@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useGameRoom } from "./useGameRoom";
 import { ArxivGame } from "./ArxivGame";
 import { generateTitle } from "./generateTitle";
+import { PlayerInfoCard } from "../../../components/game/PlayerInfoCard"; 
 
-export default function ArxivApp() {
+export default function ArxivApp({playerName, playerAvatar}) {
   const [nameField, setNameField] = useState("");
   const [playerId, setPlayerId] = useState("");
   const game = useGameRoom({ refetchInterval: 800 });
@@ -28,7 +29,7 @@ export default function ArxivApp() {
           [playerId]: { score: 0 }
         }
       });
-    }
+    } 
   }, [game.state, game.roomId, playerId, registered]);
 
   async function createRoom(){
@@ -52,7 +53,6 @@ export default function ArxivApp() {
           guesses: {}
         }
       });
-
   }
 
   function joinRoom(){
@@ -62,7 +62,7 @@ export default function ArxivApp() {
 
   // STEP 1: enter name
   if (!playerId){
-    return (
+    /*return (
       <div style={{padding:20}}>
         <h2>Enter your name:</h2>
         <input
@@ -76,11 +76,42 @@ export default function ArxivApp() {
           Continue
         </button>
       </div>
-    );
+    );**/ 
+    setPlayerId(playerName); 
   }
  
   if (!game.roomId){
-    return (
+        return (
+          <div>
+            <header>
+              <nav>
+              </nav>
+            </header>
+            <PlayerInfoCard playerName={playerName} playerAvatar={playerAvatar}/>
+            <section aria-labelledby="as-game-heading" className="card" style={{
+    background: "linear-gradient(180deg, #FFFFFF 0%, #F3F6FF 100%)",
+    borderRadius: "18px",
+    padding: "28px",
+    margin: "30px auto",
+    maxWidth: "700px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+    border: "1px solid var(--color-border)",
+  }}>
+                  <h2><b>Arxiv vs. Snarxiv</b></h2>
+
+                    <h2>Setup Multiplayer Session</h2>
+                    <br /> 
+                    <button onClick={createRoom}>
+                      Create Room
+                    </button>
+                    <br /><br />
+                    <button onClick={joinRoom}>
+                      Join Room
+                    </button>
+            </section>
+          </div>
+        );
+    /*<*return (
       <div style={{padding:20}}>
         <h2>Hello {playerId}!</h2>
         <button onClick={createRoom}>
@@ -91,7 +122,7 @@ export default function ArxivApp() {
           Join Room
         </button>
       </div>
-    );
+    );**/
   }
  
   if (game.roomId && !game.state){
@@ -108,6 +139,7 @@ export default function ArxivApp() {
       playerId={playerId}
       game={game}
       pushState={game.pushState}
+      gameRoomId={game.roomId}
     />
   );
  /* if (game.state){

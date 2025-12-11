@@ -33,7 +33,15 @@ export const LobbyView = ({
   };
 
   return (
-    <section aria-labelledby="settings-heading" className="card">
+    <section aria-labelledby="settings-heading" className="card" style={{
+    background: "linear-gradient(180deg, #FFFFFF 0%, #F3F6FF 100%)",
+    borderRadius: "18px",
+    padding: "28px",
+    margin: "30px auto",
+    maxWidth: "700px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+    border: "1px solid var(--color-border)",
+  }}>
       <h2 id="settings-heading">Player Settings</h2>
 
       <div role="status" aria-live="polite" data-testid="greeting">
@@ -107,7 +115,7 @@ export const LobbyView = ({
         <button id="start-game" type="button" onClick={handleGameStart}>
           Start Game
         </button>
-      </div>
+      </div> 
     </section>
   );
 };

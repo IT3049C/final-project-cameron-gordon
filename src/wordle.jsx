@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "./WordleGame.css"; // for grid + animations
+import { PlayerInfoCard } from "./components/game/PlayerInfoCard";
 
 const config = {
   wordLength: 5,
@@ -8,7 +9,7 @@ const config = {
 
 const fallbackWords = ["apple", "world", "words", "hello", "react", "games"];
 
-export default function WordleGame() {
+export default function WordleGame({playerName, playerAvatar}) {
   const [grid, setGrid] = useState([]);
   const [targetWord, setTargetWord] = useState("");
   const [gameReady, setGameReady] = useState(false);
@@ -185,7 +186,7 @@ const handleKeyDown = useCallback(
   // Reset game function
   const resetGame = async () => {
     setGameReady(false);
-    const word = await fetchTargetWord();
+    const word = await fetchTargetWord(); 
     setTargetWord(word);
     const emptyGrid = Array.from({ length: config.maxAttempts }, () =>
       Array(config.wordLength).fill("")
@@ -199,9 +200,29 @@ const handleKeyDown = useCallback(
     setGameReady(true);
   };
 
+  //let playerName = "Cameron"; 
+   //playerAvatar = "wizard"; 
+
   return (
-    <div className="wordle-container">
-      <h1>React Wordle</h1>
+    <div>
+
+            <PlayerInfoCard playerName={playerName} playerAvatar={playerAvatar} />
+
+          <section style={{
+    background: "linear-gradient(180deg, #FFFFFF 0%, #F3F6FF 100%)",
+    borderRadius: "18px",
+    padding: "28px",
+    margin: "30px auto",
+    maxWidth: "700px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+    border: "1px solid var(--color-border)",
+  }}>
+          <div className="wordle-container"> 
+                        <h2>Wordle, built in React</h2>
+        <button onClick={resetGame} className="reset-button">
+          Reset Game
+        </button>
+
       <div
         id="wordle-grid"
         className="grid"
@@ -227,6 +248,8 @@ const handleKeyDown = useCallback(
           Play Again
         </button>
       )}
+    </div>
+    </section>
     </div>
   );
 }

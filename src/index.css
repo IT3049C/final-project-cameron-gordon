@@ -19,6 +19,8 @@ body {
 
   /* Color scheme detection */
   color-scheme: light dark;
+  --alt-1: #E8F1FF;
+--alt-2: #F7EDFF;
 
   /* Light theme variables (default) */
   --color-text: #213547;

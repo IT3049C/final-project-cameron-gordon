@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useEffect } from "react"; 
+import { PlayerInfoCard } from '../game/PlayerInfoCard';
 
 function Square({ value, onSquareClick }) {
   return (
@@ -46,7 +47,7 @@ function Board({ xIsNext, squares, onPlay }) {
   );
 }
 
-export default function Game() {
+export default function Game({playerName, playerAvatar}) {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
@@ -73,17 +74,30 @@ export default function Game() {
         <button onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
-  });
+  }); 
 
   return (
     <div className="game">
-      <h2>Tic-Tac-Toe</h2> {/* 👈 This line is required for your test */}
-      <div className="game-board">
+          <PlayerInfoCard playerName={playerName} playerAvatar={playerAvatar} />
+
+      <section style={{
+    background: "linear-gradient(180deg, #FFFFFF 0%, #F3F6FF 100%)",
+    borderRadius: "18px",
+    padding: "28px",
+    margin: "30px auto",
+    maxWidth: "700px",
+    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+    border: "1px solid var(--color-border)",
+  }}>
+          <h2>Tic-Tac-Toe</h2> {/* 👈 This line is required for your test */}
+
+              <div className="game-board">
         <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
       </div>
       <div className="game-info">
         <ol>{moves}</ol>
       </div>
+      </section> 
     </div>
   );
 }

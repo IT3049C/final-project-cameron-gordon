@@ -9,13 +9,7 @@ export function GameView({ playerName, playerAvatar, difficulty }) {
   console.log(playerAvatar);
   return (
     <main>
-      <header>
-        <h2>Rock Paper Scissors</h2>
-        <nav>
-          <a onClick={handleBackToSettings} className="nav-link">
-            ← Back to Settings
-          </a>
-        </nav>
+      <header>  
       </header>
       <PlayerInfoCard playerName={playerName} playerAvatar={playerAvatar} />
       <GameSection difficulty={difficulty} />

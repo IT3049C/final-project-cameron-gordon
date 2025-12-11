@@ -27,7 +27,15 @@ export function App() {
       path: "/",
       element: (
         <main>
-            <h1>Welcome to the Games Lobby</h1>
+            <h1   style={{
+    fontSize: "2.8rem",
+    fontWeight: "800",
+    textAlign: "center",
+    marginBottom: "20px",
+    background: "linear-gradient(135deg, #7AB8FF, #FF9CEE)",
+    WebkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+  }}>Welcome to Cam's Game Hub</h1>
             <Navigation />
           <Outlet />
         </main>
@@ -72,7 +80,7 @@ export function App() {
           path: "/game/tic-tac-toe",
           element: (
             <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
-              <Game /> 
+              <Game playerName={name} playerAvatar={avatar} /> 
             </ProtectedRoute>
           ),
         },  
@@ -80,7 +88,7 @@ export function App() {
           path: "/game/wordle",
           element: (
             <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
-              <WordleGame /> 
+              <WordleGame playerName={name} playerAvatar={avatar}/> 
             </ProtectedRoute>
           ),
         },
@@ -88,7 +96,7 @@ export function App() {
           path: "/game/arxiv_snarxiv",
           element: (
             <ProtectedRoute settings={{ name, avatar, difficulty, darkMode }}> 
-              <ArxivApp /> 
+              <ArxivApp playerName={name} playerAvatar={avatar} /> 
             </ProtectedRoute>
           ),
         },

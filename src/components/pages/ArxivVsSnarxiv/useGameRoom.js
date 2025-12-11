@@ -134,7 +134,7 @@ export function useGameRoom(options) {
             || {};
 
     // create merged object
-    const merged = {
+    /*const merged = {
       ...gs,          // keep everything
       ...next,        // apply updates
       players: {
@@ -146,7 +146,25 @@ export function useGameRoom(options) {
         ...next.guesses,
       },
       version: (gs.version ?? 0) + 1,
-    };
+    };**/ 
+      const merged = {
+        ...gs,
+        ...next,
+
+        // FULL REPLACEMENT — this fixes players not being removed
+        players: next.players !== undefined 
+          ? next.players 
+          : gs.players,
+
+        // Guesses: merging is OK
+        guesses: {
+          ...gs.guesses,
+          ...next.guesses,
+        },
+
+        version: (gs.version ?? 0) + 1,
+      };
+
 
     console.log("pushState sending merged:", merged);
 
