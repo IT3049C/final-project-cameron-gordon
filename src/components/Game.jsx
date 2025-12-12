@@ -12,8 +12,7 @@ export function GameView({ playerName, playerAvatar, difficulty }) {
       <header>  
       </header>
       <PlayerInfoCard playerName={playerName} playerAvatar={playerAvatar} />
-      <GameSection difficulty={difficulty} />
-      <HighScoresSection />
+      <GameSection difficulty={difficulty} /> 
     </main>
   );
 }

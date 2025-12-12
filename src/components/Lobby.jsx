@@ -19,7 +19,19 @@ export const LobbyView = ({
     const navigate = useNavigate();
   
   const handleGameStart = () => {
-    onGameStart();
+    //onGameStart();
+      let redirect = "/";
+
+      if (location?.search) {
+        const params = new URLSearchParams(location.search);
+        const paramRedirect = params.get("redirect");
+
+        if (paramRedirect !== null) {
+          redirect = paramRedirect;
+        }
+      }
+
+      navigate(redirect, { replace: true });
   };
 
   const handleFormSubmit = (e) => {
@@ -27,9 +39,9 @@ export const LobbyView = ({
 
     onSettingsSave();
     // Extract redirect param if it exists
-    const params = new URLSearchParams(location.search);
+    /*const params = new URLSearchParams(location.search);
     const redirect = params.get("redirect") || "/";
-    navigate(redirect, { replace: true });
+    navigate(redirect, { replace: true });**/ 
   };
 
   return (
@@ -92,18 +104,6 @@ export const LobbyView = ({
             <option value="normal">normal</option>
             <option value="hard">hard</option>
           </select>
-        </div>
-
-        <div className="field checkbox">
-          <label>
-            <input
-              id="theme-toggle"
-              type="checkbox"
-              checked={darkMode}
-              onChange={() => setDarkMode((darkMode) => !darkMode)}
-            />{" "}
-            Dark Theme
-          </label>
         </div>
 
         <button id="save-settings" type="submit">

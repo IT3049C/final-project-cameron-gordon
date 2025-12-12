@@ -12,7 +12,7 @@ import WordleGame from "./wordle";
 
 export function App() {
   const [name, setName] = useState("");
-  const [avatar, setAvatar] = useState("");
+  const [avatar, setAvatar] = useState("wizard");
   const [difficulty, setDifficulty] = useState("easy");
   const [darkMode, setDarkMode] = useState(false);
   const handleSettingsSave = () => {

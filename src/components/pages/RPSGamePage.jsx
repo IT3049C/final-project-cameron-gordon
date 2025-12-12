@@ -20,8 +20,7 @@ export function RPSGamePage() {
         </nav>
       </header>
       <PlayerInfoCard playerName='aewfweafweaf' playerAvatar='wizard'/>
-      <GameSection difficulty='easy' />
-      <HighScoresSection />
+      <GameSection difficulty='easy' /> 
     </main>
   );
 }
