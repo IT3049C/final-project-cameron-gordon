@@ -1,30 +1,39 @@
-# GameHub
+**View live** 
+<br /> 
+https://it3049c.github.io/final-project-cameron-gordon/ 
 
-## Checklist
+**Setup** 
 
-- [ ] frequent commits to github.
-- [ ] filled out the self-evaluation.
+<ul>
+  <li>npm run build</li>
+  <li>npm run dev</li>
+</ul>
 
-## Self Grading Guide
-<!--- Update the following line with your self-grade --->
-<!--- Check the Rubric on Canvas for a guideline --->
+**Unit Testing**
 
-I should get **( )** out of 20 on this assignment.
+<ul>
+  <li>npm run test:e2e</li>
+  <li>Covers hub, RPS, and Arxiv vs. Snarxiv</li>
+</ul>
 
-## Self-Reflection
+**Self-Reflection**
+<br />
+How long it took me to finish this? 
 
-- **How long it took me to finish this?**
-<!-- Answer below this line -->
--
+Two weeks. 
 
-- **What do you think of this completion time?**
-<!-- Answer below this line -->
-- 
+What do you think of this completion time? 
 
-- **In hindsight, what would you do differently?**
-- <!-- Answer below this line -->
-- 
+Totally reasonable. 
 
-- **What resources did you use?**
-- <!-- Answer below this line -->
-- 
+In hindsight, what would you do differently? 
+
+Nothing, everything went great. 
+
+**What resources did you use?**
+
+Canvas lectures, ChatGPT
+
+**Credits** 
+<br />
+Developer: Cameron Gordon
