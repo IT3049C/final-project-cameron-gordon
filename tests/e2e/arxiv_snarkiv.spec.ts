@@ -12,4 +12,6 @@ test('arxiv_snarkiv', async ({ page }) => {
   await expect(
     page.locator('text=/✔ Correct|✘ Wrong/')
   ).toBeVisible();
+
+  await page.getByRole('button', { name: 'Reset Game' }).click();
 });

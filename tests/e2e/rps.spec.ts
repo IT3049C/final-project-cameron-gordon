@@ -12,4 +12,6 @@ test('rps testing', async ({ page }) => {
    const result = page.locator('.result');
         await expect(result).toBeVisible();
         await expect(result).toHaveText(/You win!|CPU wins!|Tie\./);
+
+  await page.getByRole('button', { name: 'Reset Game' }).click();
 });
