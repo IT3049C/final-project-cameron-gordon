@@ -1,15 +1,21 @@
-**View live*** 
+**View live** 
+<br /> 
 https://it3049c.github.io/final-project-cameron-gordon/ 
 
 **Setup** 
 
-1. npm build
-2. npm run dev
+<ul>
+  <li>npm run build</li>
+  <li>npm run dev</li>
+</ul>
 
 **Unit Testing**
 
-npm run test:e2e 
-Covers hub, RPS, and Arxiv vs. Snarkiv
+<ul>
+  <li>npm run test:e2e</li>
+  <li>Covers hub, RPS, and Arxiv vs. Snarxiv</li>
+</ul>
 
 **Credits** 
+<br />
 Developer: Cameron Gordon
